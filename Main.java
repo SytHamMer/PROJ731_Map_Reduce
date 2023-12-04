@@ -12,7 +12,7 @@ public class Main {
         //algo
 
 
-        TextDivisor textDivisor = new TextDivisor(file);
+        TextDivisor textDivisor = new TextDivisor(file,nbMap);
 
     }
 }
