@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.ArrayList;
 
@@ -7,8 +8,8 @@ public class Main {
 
         System.out.println("feur");
 
-        String file = "a";
-        int nbMap= 3;
+        String file = "D:/Cours/S7/Proj731/test.txt";
+        int nbMap= 10;
         int nbReduce=3;
         //algo
 
@@ -50,6 +51,6 @@ public class Main {
 
 
 
-
+        System.out.println(textDivisor.textToArray());
     }
 }
