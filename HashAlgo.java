@@ -20,6 +20,18 @@ public class HashAlgo {
         return this.nbRed;
     }
 
+    //OPTI ?
+    public int get_algo(String type_algo,String word){
+        switch(type_algo){
+            case "random":
+                return algo_random(word);
+
+            case "lenght":
+            return algo_lenght(word);
+        }
+        return 0;
+    }
+
     public int algo_random(String word){
         Random random = new Random();
         int randInt = random.nextInt(nbRed);
