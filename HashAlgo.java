@@ -31,7 +31,7 @@ public class HashAlgo {
             }
             return 0;
     }
-
+    //KC
     public int algo_random(String word){
         Random random = new Random();
         int randInt = random.nextInt(nbRed);

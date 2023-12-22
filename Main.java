@@ -1,3 +1,4 @@
+import java.awt.image.AreaAveragingScaleFilter;
 import java.util.Arrays;
 import java.sql.SQLOutput;
 import java.util.HashMap;
@@ -7,7 +8,7 @@ public class Main {
 
         System.out.println("feur");
 
-        String file = "sources/test.txt";
+        String file = "sources/message.txt";
         int nbMap= 10;
         int nbReduce=3;
         //algo
@@ -27,7 +28,6 @@ public class Main {
         for (int i = 0;i<nbMap;i++){
             list_maps.add(new Map(i,text_divised.get(i),algo,algo_name));
             before_reducing.add(list_maps.get(i).map());
-            //System.out.println(before_reducing.get(i).size());
 
         }
 
