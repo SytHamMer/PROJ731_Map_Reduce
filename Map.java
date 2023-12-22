@@ -15,22 +15,34 @@ public class Map {
         this.type_algo = type_algo;
     }
 
+    @Override
+    public String toString() {
+        return "Map{" +
+                "id=" + id +
+                ", text=" + text.size() +
+                ", algo=" + algo +
+                ", type_algo='" + type_algo + '\'' +
+                '}';
+    }
 
-    public ArrayList<HashMap> map(){
-        ArrayList<HashMap> res = new ArrayList<>();
-        int nbRed = this.algo.getNbRed();
-
-        for(int i =0;i<nbRed;i++) {
-            res.add(i, new HashMap<>());
+    public ArrayList<HashMap<String,Integer>> map(){
+        ArrayList<HashMap<String,Integer>> res = new ArrayList<>();
+        for(int i = 0;i<algo.getNbRed();i++){
+            res.add(new HashMap<String,Integer>());
         }
-
-        for(String word : text){
-            int idRed = this.algo.get_algo(this.type_algo,word);
-            while(word != )
+        HashMap<String,Integer> temporary_dict = new HashMap<>();
+        for (String word : text){
+            if (temporary_dict.containsKey(word)){
+                temporary_dict.put(word,temporary_dict.get(word)+1);
             }
-
-
+            else{
+                temporary_dict.put(word,1);
+            }
+        }
+        for (String key: temporary_dict.keySet()){
+            res.get(algo.get_algo(type_algo,key)).put(key,temporary_dict.get(key));
         }
         return res;
+
     }
 }
