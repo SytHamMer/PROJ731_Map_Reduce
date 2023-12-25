@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("feur");
+        long starTime = System.nanoTime();
 
         String file = "sources/message.txt";
         int nbMap= 10;
@@ -58,8 +58,13 @@ public class Main {
             }
         }
 
+        long endTime = System.nanoTime();
+        //duration in ms
+        long duration = (endTime-starTime)/ 1000000;
+
         //System.out.println(text_divised);
         System.out.println(final_one);
+        System.out.println("Durée de l'éxécution: " +  duration + " ms");
 
 
 
