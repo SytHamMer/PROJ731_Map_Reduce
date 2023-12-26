@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.io.FileWriter;
+import java.io.IOException;
 
-import javax.swing.*;
 public class Evaluation {
     private int nbTest;
 
