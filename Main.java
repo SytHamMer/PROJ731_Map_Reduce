@@ -1,6 +1,4 @@
-import java.awt.image.AreaAveragingScaleFilter;
-import java.util.Arrays;
-import java.sql.SQLOutput;
+
 import java.util.HashMap;
 import java.util.ArrayList;
 public class Main {
@@ -67,7 +65,11 @@ public class Main {
         System.out.println("Durée de l'éxécution: " +  duration + " ms");
 
 
+        //TEST FOR EVALUATION
 
+        ProcessCreation test = new ProcessCreation(2,3,"sources/message.txt");
+        Evaluation eval = new Evaluation(20,test);
+        eval.bestChoice();
 
     }
 }

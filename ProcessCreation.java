@@ -35,4 +35,16 @@ public class ProcessCreation {
 
 
     // CREATE THE PROCESS WITH MULTIPROCESSING HERE
+    //WE NEED TO KEEP THIS TO INPUT
+
+    public double run(int nbMap,int nbReduc){
+        //HERE MAKE EVERYTHING (CHANGE THE OUTPUT)
+        double a = 5264515.854;
+        for (int i = 0; i<nbMap;i++){
+            for(int j =0;j<nbReduc;j++){
+                a = a/(i+j);
+            }
+        }
+        return a;
+    }
 }
