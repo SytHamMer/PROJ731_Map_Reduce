@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
-
+        // TEST WITHOUT MULTITHREADING
         long starTime = System.nanoTime();
 
         String file = "sources/message.txt";
@@ -65,12 +65,14 @@ public class Main {
         System.out.println("Durée de l'éxécution: " +  duration + " ms");
 
 
-        //TEST FOR EVALUATION
+        //TEST WITH MULTITHREADING
 
         ProcessCreation test = new ProcessCreation("sources/message.txt");
         Evaluation eval = new Evaluation(20,test,10,10);
-        //eval.evaluateTime(1,1);
+        //CHOICE OF BEST COMBO
         eval.bestChoice();
+        //RESULT WITH A SPECIFIC COMBO
+        test.run(8,6);
 
     }
 }
