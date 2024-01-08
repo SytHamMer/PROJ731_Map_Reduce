@@ -5,11 +5,15 @@ import java.io.IOException;
 
 public class Evaluation {
     private int nbTest;
+    private int nbMap;
+    private int nbRed;
 
     private ProcessCreation test;
-    public Evaluation(int nbTest, ProcessCreation test) {
+    public Evaluation(int nbTest, ProcessCreation test,int nbMap,int nbRed) {
         this.nbTest = nbTest;
         this.test = test;
+        this.nbMap = nbMap;
+        this.nbRed = nbRed;
     }
 
 
@@ -20,8 +24,7 @@ public class Evaluation {
         this.test.run(nbMap,nbReducer);
 
         long endTime = System.nanoTime();
-        //long duration = (endTime-startTime)/1000000;
-        long duration = (endTime-startTime);
+        long duration = (endTime-startTime)/1000000;
         return duration;
 
 
@@ -31,8 +34,8 @@ public class Evaluation {
 
         HashMap<String,Double> res = new HashMap<>();
         //For every combination possible
-        for (int i =1; i<=this.test.getNbMap();i++){
-            for (int j = 1;j<= this.test.getNbReduc();j++){
+        for (int i =1; i<=this.nbMap;i++){
+            for (int j = 1;j<= this.nbRed;j++){
                 ArrayList<Long> durations = new ArrayList<>();
                 for(int k = 0; k< nbTest;k++){
                     durations.add(evaluateTime(i,j));

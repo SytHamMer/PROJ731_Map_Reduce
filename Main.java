@@ -32,7 +32,7 @@ public class Main {
         //Shuffle
         Repartitor repartitor = new Repartitor(before_reducing,nbReduce);
         HashMap<Integer,ArrayList<HashMap<String,Integer>>> after_repartitor = repartitor.repartitor();
-
+        System.out.println(after_repartitor);
 
         //create Reducers DO IT IN THREAD LATTER
 
@@ -61,14 +61,15 @@ public class Main {
         long duration = (endTime-starTime)/ 1000000;
 
         //System.out.println(text_divised);
-        System.out.println(final_one);
+        //System.out.println(final_one);
         System.out.println("Durée de l'éxécution: " +  duration + " ms");
 
 
         //TEST FOR EVALUATION
 
-        ProcessCreation test = new ProcessCreation(2,3,"sources/message.txt");
-        Evaluation eval = new Evaluation(20,test);
+        ProcessCreation test = new ProcessCreation("sources/message.txt");
+        Evaluation eval = new Evaluation(20,test,10,10);
+        //eval.evaluateTime(1,1);
         eval.bestChoice();
 
     }

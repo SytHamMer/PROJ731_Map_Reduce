@@ -13,11 +13,18 @@ public class HashAlgo {
         if (instance == null) {
             instance = new HashAlgo(nbRed);
         }
+        else{
+            instance.setNbRed(nbRed);
+        }
         return instance;
     }
 
     public int getNbRed() {
         return this.nbRed;
+    }
+
+    public void setNbRed(int newNbRed){
+        this.nbRed = newNbRed;
     }
 
     //OPTI ?
