@@ -8,7 +8,7 @@ public class Main {
 
         String file = "sources/message.txt";
         int nbMap= 10;
-        int nbReduce=3;
+        int nbReduce=10;
         //algo
 
         //initialise object
@@ -68,11 +68,11 @@ public class Main {
         //TEST WITH MULTITHREADING
 
         ProcessCreation test = new ProcessCreation("sources/message.txt");
-        Evaluation eval = new Evaluation(20,test,10,10);
+        //Evaluation eval = new Evaluation(20,test,10,10);
         //CHOICE OF BEST COMBO
-        eval.bestChoice();
+        //eval.bestChoice();
         //RESULT WITH A SPECIFIC COMBO
-        test.run(8,6);
+        test.run(7,10);
 
     }
 }
